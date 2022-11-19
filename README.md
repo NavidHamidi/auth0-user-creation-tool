@@ -28,3 +28,7 @@ yarn dev
 ```
 
 Create your .env file and put your Auth0 domain, clientId ans clientSecret. You can see an example in .env.local
+
+## Quick Demo
+
+https://auth0-user-creation-tool-e2pdijoof-navidhamidi.vercel.app/

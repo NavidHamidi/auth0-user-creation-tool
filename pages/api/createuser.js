@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     const clientId = process.env.AUTH0_CLIENT_ID
     const clientSecret = process.env.AUTH0_CLIENT_SECRET
     const connection = process.env.AUTH0_CONNECTION
-    console.log(domain, clientId, connection)
+
     try {
         let result = await fetch(`${domain}/oauth/token`, {
             method: 'POST',
@@ -44,7 +44,6 @@ export default async function handler(req, res) {
         res.status(result.status).json(data)
     }
     catch (error) {
-        console.log("error create user")
         console.log(error)
         res.status(500).send({error: error})
     }
