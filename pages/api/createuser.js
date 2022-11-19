@@ -5,6 +5,7 @@ export default async function handler(req, res) {
     const audience = `${domain}/api/v2/`
     const clientId = process.env.AUTH0_CLIENT_ID
     const clientSecret = process.env.AUTH0_CLIENT_SECRET
+    const connection = process.env.AUTH0_CONNECTION
     
     try {
         let result = await fetch(`${domain}/oauth/token`, {
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
                 'grant_type': 'client_credentials',
                 'client_id': clientId,
                 'client_secret': clientSecret,
-                'audience': audienceé
+                'audience': audience
             })
         })
     
@@ -35,8 +36,7 @@ export default async function handler(req, res) {
                     "job" : req.body.job
                 },
                 "password": v4(),
-                // Change if you are using a different database
-                "connection": "Username-Password-Authentication"
+                "connection": connection
             })
         })
         
