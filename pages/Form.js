@@ -35,6 +35,7 @@ function Form() {
         body: JSON.stringify(form),
       })
       .then(res => {
+        console.log(res)
         router.push({
             pathname: '/result',
             query: {'data': res.status}
